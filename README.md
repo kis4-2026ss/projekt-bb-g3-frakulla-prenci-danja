@@ -1,5 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/5deAuAXI)
-
 # Arkulcis — AI-Assisted Constructed Language Translator
 
 **KIS4 Project | FH Hagenberg | 2026**
@@ -88,7 +86,7 @@ Build an AI-assisted **bidirectional** translation system:
 - **Arkulcis → English** using a decoding system prompt
 - Numbers are always handled by the rule-based `numeral.py`, never the AI
 
-**Validation:** unit tests covering phonetics, numbers, grammar rules,
+**Validation:** 51 unit tests covering phonetics, numbers, grammar rules,
 number pre-conversion, and prompt builder — all passing without any API calls.
 
 ---
@@ -108,7 +106,6 @@ number pre-conversion, and prompt builder — all passing without any API calls.
 ## Project Structure
 
 ```
-but could change
 arkulcis/
 ├── language_spec/
 │   ├── grammar_rules.json   ← All Arkulcis grammar rules
@@ -123,7 +120,7 @@ arkulcis/
 ├── tests/
 │   └── test_translate.py    ← 51 pytest unit tests (no API needed)
 ├── docs/
-│   └── architecture.md      ← System architecture
+│   └── architecture.md      ← System architecture + Mermaid diagram
 ├── .env.example             ← API key template
 ├── requirements.txt
 ├── run.py                   ← Quick run script from project root
@@ -146,14 +143,23 @@ arkulcis/
 git clone https://github.com/kis4-2026ss/projekt-bb-g3-frakulla-prenci-danja
 cd projekt-bb-g3-frakulla-prenci-danja
 pip install -r requirements.txt
-.env file with GROQ_API_KEY will be needed too
 ```
 
-### 3. Why Groq API
+### 3. Get a free Groq API key
 
-It is a free option, offers similar experience as Open API the tool can be anything what matters is the usability of it
+1. Go to **console.groq.com**
+2. Sign in with your Google account
+3. Click **API Keys → Create API key**
+4. Copy the key (starts with `gsk_...`)
 
-### 4. Translate English → Arkulcis
+### 4. Set your API key
+
+```bash
+cp .env.example .env
+# Open .env and add: GROQ_API_KEY=gsk_your-key-here
+```
+
+### 5. Translate English → Arkulcis
 
 ```bash
 python -m translator.translate

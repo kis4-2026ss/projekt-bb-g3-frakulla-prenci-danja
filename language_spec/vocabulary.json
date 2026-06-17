@@ -1,0 +1,1125 @@
+{
+  "language": "Arkulcis",
+  "version": "1.0",
+  "note": "All words are phonetically spelled. Adjectives end in -ro, adverbs in -ly. Verbs are listed in root form (add -as/-ed/-ul for tenses).",
+  "pronouns": {
+    "mi": {
+      "en": "I",
+      "type": "pronoun"
+    },
+    "ni": {
+      "en": "you",
+      "type": "pronoun"
+    },
+    "pi": {
+      "en": "he / she / it",
+      "type": "pronoun"
+    },
+    "mios": {
+      "en": "we",
+      "type": "pronoun"
+    },
+    "nios": {
+      "en": "you all",
+      "type": "pronoun"
+    },
+    "pios": {
+      "en": "they",
+      "type": "pronoun"
+    }
+  },
+  "nouns": {
+    "kat": {
+      "en": "cat",
+      "plural": "katos"
+    },
+    "dog": {
+      "en": "dog",
+      "plural": "dogos"
+    },
+    "haus": {
+      "en": "house",
+      "plural": "hausos"
+    },
+    "skul": {
+      "en": "school",
+      "plural": "skulos"
+    },
+    "buk": {
+      "en": "book",
+      "plural": "bukos"
+    },
+    "fud": {
+      "en": "food",
+      "plural": "fudos"
+    },
+    "watur": {
+      "en": "water",
+      "plural": "waturos"
+    },
+    "fren": {
+      "en": "friend",
+      "plural": "frenos"
+    },
+    "person": {
+      "en": "person",
+      "plural": "personos"
+    },
+    "child": {
+      "en": "child",
+      "plural": "childos"
+    },
+    "man": {
+      "en": "man",
+      "plural": "manos"
+    },
+    "woman": {
+      "en": "woman",
+      "plural": "womanos"
+    },
+    "tacher": {
+      "en": "teacher",
+      "plural": "tacheros"
+    },
+    "stuedent": {
+      "en": "student",
+      "plural": "stuedentros"
+    },
+    "siti": {
+      "en": "city",
+      "plural": "sitios"
+    },
+    "strit": {
+      "en": "street",
+      "plural": "stritos"
+    },
+    "kar": {
+      "en": "car",
+      "plural": "karos"
+    },
+    "tri": {
+      "en": "tree",
+      "plural": "trios"
+    },
+    "flouer": {
+      "en": "flower",
+      "plural": "floueros"
+    },
+    "sun": {
+      "en": "sun",
+      "plural": null
+    },
+    "mun": {
+      "en": "moon",
+      "plural": null
+    },
+    "star": {
+      "en": "star",
+      "plural": "staros"
+    },
+    "mounten": {
+      "en": "mountain",
+      "plural": "mountenos"
+    },
+    "rivor": {
+      "en": "river",
+      "plural": "rivoros"
+    },
+    "okian": {
+      "en": "ocean",
+      "plural": "okianos"
+    },
+    "tem": {
+      "en": "team",
+      "plural": "temos"
+    },
+    "geim": {
+      "en": "game",
+      "plural": "geimos"
+    },
+    "musik": {
+      "en": "music",
+      "plural": null
+    },
+    "art": {
+      "en": "art",
+      "plural": null
+    },
+    "langgwij": {
+      "en": "language",
+      "plural": "langgwijos"
+    },
+    "wurd": {
+      "en": "word",
+      "plural": "wurdos"
+    },
+    "sentens": {
+      "en": "sentence",
+      "plural": "sentensos"
+    },
+    "tabel": {
+      "en": "table",
+      "plural": "tabelos"
+    },
+    "char": {
+      "en": "chair",
+      "plural": "charos"
+    },
+    "windou": {
+      "en": "window",
+      "plural": "windouos"
+    },
+    "dor": {
+      "en": "door",
+      "plural": "doros"
+    },
+    "rod": {
+      "en": "road",
+      "plural": "rodos"
+    },
+    "bridj": {
+      "en": "bridge",
+      "plural": "bridjos"
+    },
+    "shelfv": {
+      "en": "shelf",
+      "plural": "shelvos"
+    },
+    "aiel": {
+      "en": "aisle",
+      "plural": "aielos"
+    },
+    "paij": {
+      "en": "page",
+      "plural": "paijos"
+    },
+    "stoari": {
+      "en": "story",
+      "plural": "stoarios"
+    },
+    "ideaos": {
+      "en": "idea",
+      "plural": "ideaos"
+    },
+    "drim": {
+      "en": "dream",
+      "plural": "drimos"
+    },
+    "lif": {
+      "en": "life",
+      "plural": "lifos"
+    },
+    "tim": {
+      "en": "time",
+      "plural": null
+    },
+    "dai": {
+      "en": "day",
+      "plural": "daios"
+    },
+    "nait": {
+      "en": "night",
+      "plural": "naitos"
+    },
+    "yer": {
+      "en": "year",
+      "plural": "yeros"
+    },
+    "munth": {
+      "en": "month",
+      "plural": "munthos"
+    },
+    "werk": {
+      "en": "work",
+      "plural": null
+    },
+    "job": {
+      "en": "job",
+      "plural": "jobos"
+    },
+    "mani": {
+      "en": "money",
+      "plural": null
+    },
+    "plas": {
+      "en": "place",
+      "plural": "plasos"
+    },
+    "werld": {
+      "en": "world",
+      "plural": null
+    },
+    "naichur": {
+      "en": "nature",
+      "plural": null
+    },
+    "problem": {
+      "en": "problem",
+      "plural": "problemos"
+    },
+    "solushen": {
+      "en": "solution",
+      "plural": "solushenos"
+    },
+    "kwestshen": {
+      "en": "question",
+      "plural": "kwestshenos"
+    },
+    "ansur": {
+      "en": "answer",
+      "plural": "ansurus"
+    },
+    "fon": {
+      "en": "phone",
+      "plural": "fonos"
+    },
+    "komputer": {
+      "en": "computer",
+      "plural": "komputeros"
+    },
+    "skrin": {
+      "en": "screen",
+      "plural": "skrinas"
+    },
+    "data": {
+      "en": "data"
+    },
+    "model": {
+      "en": "model",
+      "plural": "modelos"
+    },
+    "kode": {
+      "en": "code",
+      "plural": null
+    },
+    "program": {
+      "en": "program",
+      "plural": "programos"
+    },
+    "smil": {
+      "en": "smile",
+      "plural": "smilos"
+    },
+    "kornor": {
+      "en": "corner",
+      "plural": "kornoros"
+    },
+    "bakeri": {
+      "en": "bakery",
+      "plural": "bakerios"
+    },
+    "bukstoar": {
+      "en": "bookstore",
+      "plural": "bukstoaros"
+    },
+    "sunlait": {
+      "en": "sunlight",
+      "plural": null
+    },
+    "patern": {
+      "en": "pattern",
+      "plural": "paternos"
+    },
+    "plesur": {
+      "en": "pleasure",
+      "plural": null
+    },
+    "pashen": {
+      "en": "passion",
+      "plural": null
+    },
+    "literatur": {
+      "en": "literature",
+      "plural": null
+    },
+    "grouth": {
+      "en": "growth",
+      "plural": null
+    },
+    "media": {
+      "en": "media",
+      "plural": null
+    },
+    "dis": {
+      "en": "this",
+      "plural": "disos"
+    },
+    "dat": {
+      "en": "that",
+      "plural": "datos"
+    },
+    "her": {
+      "en": "here"
+    },
+    "ther": {
+      "en": "there"
+    },
+    "enimor": {
+      "en": "anymore"
+    },
+    "enithing": {
+      "en": "anything",
+      "plural": "enithingos"
+    },
+    "evriting": {
+      "en": "everything",
+      "plural": "evrithingos"
+    },
+    "nothing": {
+      "en": "nothing"
+    },
+    "sujeshen": {
+      "en": "suggestion",
+      "plural": "sujeshenos"
+    },
+    "artikl": {
+      "en": "article",
+      "plural": "artiklos"
+    },
+    "projekt": {
+      "en": "project",
+      "plural": "projektos"
+    },
+    "insekt": {
+      "en": "insect",
+      "plural": "insektos"
+    },
+    "subdivijen": {
+      "en": "subdivision",
+      "plural": "subdivijenos"
+    },
+    "stub": {
+      "en": "stub",
+      "plural": "stubos"
+    },
+    "develpoment": {
+      "en": "development"
+    },
+    "purpos": {
+      "en": "purpose",
+      "plural": "purposos"
+    },
+    "aim": {
+      "en": "aim",
+      "plural": "aimos"
+    },
+    "jeneral": {
+      "en": "general"
+    },
+    "importans": {
+      "en": "importance"
+    }
+  },
+  "verbs": {
+    "note": "Root form only. Add -as (present), -ed (past), -ul (future)",
+    "run": {
+      "en": "to run",
+      "ak_root": "run",
+      "present": "runas",
+      "past": "runed",
+      "future": "runul"
+    },
+    "go": {
+      "en": "to go",
+      "ak_root": "go",
+      "present": "goas",
+      "past": "goed",
+      "future": "goul"
+    },
+    "kom": {
+      "en": "to come",
+      "ak_root": "kom",
+      "present": "komas",
+      "past": "komed",
+      "future": "komul"
+    },
+    "sit": {
+      "en": "to sit",
+      "ak_root": "sit",
+      "present": "sitas",
+      "past": "sited",
+      "future": "situl"
+    },
+    "stand": {
+      "en": "to stand",
+      "ak_root": "stand",
+      "present": "standas",
+      "past": "standed",
+      "future": "standul"
+    },
+    "eat": {
+      "en": "to eat",
+      "ak_root": "et",
+      "present": "etas",
+      "past": "eted",
+      "future": "etul"
+    },
+    "drink": {
+      "en": "to drink",
+      "ak_root": "drink",
+      "present": "drinkas",
+      "past": "drinked",
+      "future": "drinkul"
+    },
+    "sleep": {
+      "en": "to sleep",
+      "ak_root": "slip",
+      "present": "slipas",
+      "past": "sliped",
+      "future": "slipul"
+    },
+    "tok": {
+      "en": "to talk / speak",
+      "ak_root": "tok",
+      "present": "tokas",
+      "past": "toked",
+      "future": "tokul"
+    },
+    "lisen": {
+      "en": "to listen",
+      "ak_root": "lisen",
+      "present": "lisenas",
+      "past": "lisened",
+      "future": "lisenul"
+    },
+    "lern": {
+      "en": "to learn",
+      "ak_root": "lern",
+      "present": "lernas",
+      "past": "lerned",
+      "future": "lernul"
+    },
+    "tech": {
+      "en": "to teach",
+      "ak_root": "tech",
+      "present": "techas",
+      "past": "teched",
+      "future": "techul"
+    },
+    "no": {
+      "en": "to know",
+      "ak_root": "no",
+      "present": "noas",
+      "past": "noed",
+      "future": "noul"
+    },
+    "think": {
+      "en": "to think",
+      "ak_root": "think",
+      "present": "thinkas",
+      "past": "thinked",
+      "future": "thinkul"
+    },
+    "fil": {
+      "en": "to feel",
+      "present": "filas",
+      "past": "filed",
+      "future": "filul"
+    },
+    "luv": {
+      "en": "to love",
+      "ak_root": "luv",
+      "present": "luvas",
+      "past": "luved",
+      "future": "luvul"
+    },
+    "help": {
+      "en": "to help",
+      "ak_root": "help",
+      "present": "helpas",
+      "past": "helped",
+      "future": "helpul"
+    },
+    "wurk": {
+      "en": "to work",
+      "ak_root": "wurk",
+      "present": "wurkas",
+      "past": "wurked",
+      "future": "wurkul"
+    },
+    "bild": {
+      "en": "to build",
+      "ak_root": "bild",
+      "present": "bildas",
+      "past": "bilded",
+      "future": "bildul"
+    },
+    "kre-at": {
+      "en": "to create",
+      "ak_root": "kreat",
+      "present": "kreatas",
+      "past": "kreated",
+      "future": "kreatul"
+    },
+    "find": {
+      "en": "to find",
+      "ak_root": "find",
+      "present": "findas",
+      "past": "finded",
+      "future": "findul"
+    },
+    "si": {
+      "en": "to see",
+      "ak_root": "si",
+      "present": "sias",
+      "past": "sied",
+      "future": "siul"
+    },
+    "her": {
+      "en": "to hear",
+      "ak_root": "her",
+      "present": "heras",
+      "past": "hered",
+      "future": "herul"
+    },
+    "giv": {
+      "en": "to give",
+      "ak_root": "giv",
+      "present": "givas",
+      "past": "gived",
+      "future": "givul"
+    },
+    "tek": {
+      "en": "to take",
+      "ak_root": "tek",
+      "present": "tekas",
+      "past": "teked",
+      "future": "tekul"
+    },
+    "maek": {
+      "en": "to make",
+      "ak_root": "maek",
+      "present": "maekas",
+      "past": "maeked",
+      "future": "maekul"
+    },
+    "sei": {
+      "en": "to say",
+      "ak_root": "sei",
+      "present": "seias",
+      "past": "seied",
+      "future": "seiul"
+    },
+    "rait": {
+      "en": "to write",
+      "ak_root": "rait",
+      "present": "raitas",
+      "past": "raited",
+      "future": "raitul"
+    },
+    "red": {
+      "en": "to read",
+      "ak_root": "red",
+      "present": "redas",
+      "past": "reded",
+      "future": "redul"
+    },
+    "open": {
+      "en": "to open",
+      "ak_root": "open",
+      "present": "openas",
+      "past": "opened",
+      "future": "openul"
+    },
+    "kloz": {
+      "en": "to close",
+      "ak_root": "kloz",
+      "present": "klozas",
+      "past": "klozed",
+      "future": "klozul"
+    },
+    "start": {
+      "en": "to start",
+      "ak_root": "start",
+      "present": "startas",
+      "past": "started",
+      "future": "startul"
+    },
+    "stop": {
+      "en": "to stop",
+      "ak_root": "stop",
+      "present": "stopas",
+      "past": "stoped",
+      "future": "stopul"
+    },
+    "liv": {
+      "en": "to live",
+      "ak_root": "liv",
+      "present": "livas",
+      "past": "lived",
+      "future": "livul"
+    },
+    "dai": {
+      "en": "to die",
+      "ak_root": "dai",
+      "present": "daias",
+      "past": "daied",
+      "future": "daiul"
+    },
+    "mov": {
+      "en": "to move",
+      "ak_root": "mov",
+      "present": "movas",
+      "past": "moved",
+      "future": "movul"
+    },
+    "chanj": {
+      "en": "to change",
+      "ak_root": "chanj",
+      "present": "chanjas",
+      "past": "chanjed",
+      "future": "chanjul"
+    },
+    "remain": {
+      "en": "to remain",
+      "ak_root": "remain",
+      "present": "remainas",
+      "past": "remained",
+      "future": "remainul"
+    },
+    "eksplor": {
+      "en": "to explore",
+      "ak_root": "eksplor",
+      "present": "ekslporas",
+      "past": "eksplored",
+      "future": "eksplorul"
+    },
+    "enjoy": {
+      "en": "to enjoy",
+      "ak_root": "enjoy",
+      "present": "enjoyas",
+      "past": "enjoyed",
+      "future": "enjoyul"
+    },
+    "wander": {
+      "en": "to wander",
+      "ak_root": "wander",
+      "present": "wanderas",
+      "past": "wandered",
+      "future": "wanderul"
+    },
+    "diskuver": {
+      "en": "to discover",
+      "ak_root": "diskuver",
+      "present": "diskuveras",
+      "past": "diskuvered",
+      "future": "diskuverul"
+    },
+    "rekomend": {
+      "en": "to recommend",
+      "ak_root": "rekomend",
+      "present": "rekomendas",
+      "past": "rekomended",
+      "future": "rekomendul"
+    },
+    "greet": {
+      "en": "to greet",
+      "ak_root": "greet",
+      "present": "greetas",
+      "past": "greeted",
+      "future": "greeatul"
+    },
+    "traenslet": {
+      "en": "to translate",
+      "ak_root": "traenslet",
+      "present": "traensletas",
+      "past": "traensleted",
+      "future": "traensletul"
+    },
+    "enkuraj": {
+      "en": "to encourage",
+      "present": "enkurajas",
+      "past": "enkurajed",
+      "future": "enkurajul"
+    },
+    "organizas": {
+      "en": "to organize",
+      "present": "organizas",
+      "past": "organized",
+      "future": "organizul"
+    },
+    "set": {
+      "en": "to set",
+      "present": "setas",
+      "past": "seted",
+      "future": "setul"
+    },
+    "inkud": {
+      "en": "to include",
+      "present": "inkudas",
+      "past": "inkuded",
+      "future": "inkudul"
+    },
+    "fol": {
+      "en": "to follow",
+      "present": "folas",
+      "past": "foled",
+      "future": "folul"
+    },
+    "want": {
+      "en": "to want",
+      "present": "wantas",
+      "past": "wanted",
+      "future": "wantul"
+    },
+    "relat": {
+      "en": "to relate",
+      "present": "relatas",
+      "past": "related",
+      "future": "relatul"
+    },
+    "oblig": {
+      "en": "to oblige",
+      "present": "obligas",
+      "past": "obliged",
+      "future": "obligul"
+    },
+    "sujest": {
+      "en": "to suggest",
+      "present": "sujesas",
+      "past": "sujested",
+      "future": "sujestul"
+    },
+    "shud": {
+      "en": "should",
+      "present": "shudas",
+      "past": "shuded",
+      "future": "shudul"
+    },
+    "be": {
+      "en": "to be (am/is/are/was/were/will be)",
+      "present": "beas",
+      "past": "beed",
+      "future": "beul",
+      "note": "covers ALL English forms: am/is/are\u2192beas, was/were\u2192beed, will be\u2192beul"
+    }
+  },
+  "adjectives": {
+    "note": "All adjectives end in -ro (base), -rot (comparative), -rots (superlative)",
+    "bigro": {
+      "en": "big",
+      "comp": "bigrot",
+      "sup": "bigrots"
+    },
+    "smalro": {
+      "en": "small",
+      "comp": "smalrot",
+      "sup": "smalrots"
+    },
+    "fastro": {
+      "en": "fast",
+      "comp": "fastrot",
+      "sup": "fastrots"
+    },
+    "sloro": {
+      "en": "slow",
+      "comp": "slorot",
+      "sup": "slorots"
+    },
+    "gudro": {
+      "en": "good",
+      "comp": "gudrot",
+      "sup": "gudrots"
+    },
+    "badro": {
+      "en": "bad",
+      "comp": "badrot",
+      "sup": "badrots"
+    },
+    "hotro": {
+      "en": "hot",
+      "comp": "hotrot",
+      "sup": "hotrots"
+    },
+    "koldro": {
+      "en": "cold",
+      "comp": "koldrot",
+      "sup": "koldrots"
+    },
+    "newro": {
+      "en": "new",
+      "comp": "newrot",
+      "sup": "newrots"
+    },
+    "oldro": {
+      "en": "old",
+      "comp": "oldrot",
+      "sup": "oldrots"
+    },
+    "longro": {
+      "en": "long",
+      "comp": "longrot",
+      "sup": "longrots"
+    },
+    "shortro": {
+      "en": "short",
+      "comp": "shortrot",
+      "sup": "shortrots"
+    },
+    "hardro": {
+      "en": "hard",
+      "comp": "hardrot",
+      "sup": "hardrots"
+    },
+    "softro": {
+      "en": "soft",
+      "comp": "softrot",
+      "sup": "softrots"
+    },
+    "strongro": {
+      "en": "strong",
+      "comp": "strongrot",
+      "sup": "strongrots"
+    },
+    "weekro": {
+      "en": "weak",
+      "comp": "weekrot",
+      "sup": "weekrots"
+    },
+    "hapiro": {
+      "en": "happy",
+      "comp": "hapirot",
+      "sup": "hapirots"
+    },
+    "sadro": {
+      "en": "sad",
+      "comp": "sadrot",
+      "sup": "sadrots"
+    },
+    "biutifro": {
+      "en": "beautiful",
+      "comp": "biutifrot",
+      "sup": "biutifrots"
+    },
+    "ugliaro": {
+      "en": "ugly",
+      "comp": "ugliarot",
+      "sup": "ugliarots"
+    },
+    "smartro": {
+      "en": "smart",
+      "comp": "smartrot",
+      "sup": "smartrots"
+    },
+    "funniro": {
+      "en": "funny",
+      "comp": "funnirot",
+      "sup": "funnirots"
+    },
+    "siriasro": {
+      "en": "serious",
+      "comp": "siriasrot",
+      "sup": "siriasrots"
+    },
+    "kwietro": {
+      "en": "quiet",
+      "comp": "kwietrot",
+      "sup": "kwietrots"
+    },
+    "laudro": {
+      "en": "loud",
+      "comp": "laudrot",
+      "sup": "laudrots"
+    },
+    "richro": {
+      "en": "rich",
+      "comp": "richrot",
+      "sup": "richrots"
+    },
+    "purro": {
+      "en": "poor",
+      "comp": "purrot",
+      "sup": "purrots"
+    },
+    "frero": {
+      "en": "free",
+      "comp": "frerot",
+      "sup": "frerots"
+    },
+    "cheerfulro": {
+      "en": "cheerful",
+      "comp": "cheerfulrot",
+      "sup": "cheerfulrots"
+    },
+    "rapidro": {
+      "en": "rapid",
+      "comp": "rapidrot",
+      "sup": "rapidrots"
+    },
+    "dijitalro": {
+      "en": "digital",
+      "comp": "dijitalrot",
+      "sup": "dijitalrots"
+    },
+    "simplero": {
+      "en": "simple",
+      "comp": "simplerot",
+      "sup": "simplerots"
+    },
+    "warmro": {
+      "en": "warm",
+      "comp": "warmrot",
+      "sup": "warmrots"
+    },
+    "woodenro": {
+      "en": "wooden",
+      "comp": "woodenrot",
+      "sup": "woodenrots"
+    },
+    "forgotenro": {
+      "en": "forgotten",
+      "comp": "forgotenrot",
+      "sup": "forgotenrots"
+    },
+    "brodro": {
+      "en": "broad",
+      "comp": "brodrot",
+      "sup": "brodrots"
+    },
+    "importantro": {
+      "en": "important",
+      "comp": "importantrot",
+      "sup": "importantrots"
+    },
+    "relevantro": {
+      "en": "relevant",
+      "comp": "relevantrot",
+      "sup": "relevantrots"
+    },
+    "jenelro": {
+      "en": "general",
+      "comp": "jenelrot",
+      "sup": "jenelrots"
+    },
+    "obligatoro": {
+      "en": "obligated",
+      "comp": "obligatorot",
+      "sup": "obligatorots"
+    }
+  },
+  "adverbs": {
+    "note": "All adverbs end in -ly (base), -lyt (comparative), -lyts (superlative)",
+    "fastly": {
+      "en": "quickly / fast",
+      "comp": "fastlyt",
+      "sup": "fastlyts"
+    },
+    "sloly": {
+      "en": "slowly",
+      "comp": "slolyt",
+      "sup": "slolyts"
+    },
+    "gudly": {
+      "en": "well",
+      "comp": "gudlyt",
+      "sup": "gudlyts"
+    },
+    "kwietly": {
+      "en": "quietly",
+      "comp": "kwietlyt",
+      "sup": "kwietlyts"
+    },
+    "laudly": {
+      "en": "loudly",
+      "comp": "laudlyt",
+      "sup": "laudlyts"
+    },
+    "strongly": {
+      "en": "strongly",
+      "comp": "stronglyt",
+      "sup": "stronglyts"
+    },
+    "biutifuly": {
+      "en": "beautifully",
+      "comp": "biutifulyt",
+      "sup": "biutifulyts"
+    },
+    "hapily": {
+      "en": "happily",
+      "comp": "hapilyt",
+      "sup": "hapilyts"
+    },
+    "simply": {
+      "en": "simply",
+      "comp": "simplyt",
+      "sup": "simplyts"
+    },
+    "warmly": {
+      "en": "warmly",
+      "comp": "warmlyt",
+      "sup": "warmlyts"
+    },
+    "often": {
+      "en": "often",
+      "note": "kept as-is (frequency adverb)"
+    },
+    "always": {
+      "en": "always",
+      "note": "kept as-is (frequency adverb)"
+    },
+    "never": {
+      "en": "never",
+      "note": "kept as-is (frequency adverb)"
+    },
+    "sometimes": {
+      "en": "sometimes",
+      "note": "kept as-is (frequency adverb)"
+    }
+  },
+  "numbers": {
+    "zan": {
+      "decimal": 0
+    },
+    "ban": {
+      "decimal": 1
+    },
+    "dan": {
+      "decimal": 2
+    },
+    "fan": {
+      "decimal": 3
+    },
+    "gan": {
+      "decimal": 4
+    },
+    "han": {
+      "decimal": 5
+    },
+    "jan": {
+      "decimal": 6
+    },
+    "kan": {
+      "decimal": 7
+    },
+    "lan": {
+      "decimal": 8
+    },
+    "man": {
+      "decimal": 9
+    },
+    "nan": {
+      "decimal": 10
+    },
+    "pan": {
+      "decimal": 11
+    },
+    "banbil": {
+      "decimal": 12
+    },
+    "danbil": {
+      "decimal": 24
+    },
+    "bandil": {
+      "decimal": 144
+    },
+    "banfil": {
+      "decimal": 1728
+    }
+  },
+  "special_words": {
+    "di": "of (possession connector)",
+    "ka": "question marker (start of sentence)",
+    "no-": "negation prefix (before verb)",
+    "dan": "than (used in comparisons)"
+  }
+}

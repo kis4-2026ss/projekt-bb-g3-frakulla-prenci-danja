@@ -1,0 +1,388 @@
+{
+  "language": "Arkulcis",
+  "version": "1.0",
+  "description": "A phonetic, regular, and exception-free constructed language based on English structure.",
+  "phonics": {
+    "rule": "One letter = one sound, always. No silent letters. No exceptions.",
+    "removed_letters": {
+      "C": "replaced by K (before a, o, u) or S (before e, i)",
+      "Q": "replaced by KW",
+      "X": "replaced by KS",
+      "PH": "replaced by F"
+    },
+    "vowels": {
+      "A": "always 'ah' as in father",
+      "E": "always 'eh' as in bed",
+      "I": "always 'ee' as in see",
+      "O": "always 'oh' as in go",
+      "U": "always 'oo' as in moon"
+    },
+    "digraphs": {
+      "SH": "sh sound as in ship",
+      "TH": "th sound as in the",
+      "CH": "ch sound as in chair",
+      "KW": "replaces Q",
+      "KS": "replaces X"
+    },
+    "proper_nouns": "All proper nouns (names, places, cities) are respelled phonetically using Arkulcis rules."
+  },
+  "word_order": {
+    "rule": "Verb comes first, then subject, then the rest of the sentence.",
+    "example_en": "I run fast",
+    "example_ak": "runas mi fastly"
+  },
+  "articles": {
+    "rule": "No articles. 'the' and 'a/an' are dropped entirely.",
+    "example_en": "the cat / a dog",
+    "example_ak": "kat / dog"
+  },
+  "pronouns": {
+    "singular": {
+      "mi": "I (first person singular)",
+      "ni": "you (second person singular)",
+      "pi": "he / she / it (third person singular, gender neutral)"
+    },
+    "plural": {
+      "mios": "we (first person plural)",
+      "nios": "you all (second person plural)",
+      "pios": "they (third person plural)"
+    },
+    "rule": "Plural = singular pronoun + -os suffix. PI is gender neutral."
+  },
+  "nouns": {
+    "singular": "plain word, phonetically spelled",
+    "plural": "add -os suffix",
+    "examples": {
+      "kat": "cat",
+      "katos": "cats",
+      "person": "person",
+      "personos": "people / persons"
+    }
+  },
+  "verbs": {
+    "rule": "One suffix per tense. Never changes based on subject. No irregular verbs.",
+    "tenses": {
+      "present": {
+        "suffix": "-as",
+        "example_en": "I run / she runs / they run",
+        "example_ak": "mi runas / pi runas / pios runas"
+      },
+      "past": {
+        "suffix": "-ed",
+        "example_en": "I ran / she ran",
+        "example_ak": "mi runed / pi runed"
+      },
+      "future": {
+        "suffix": "-ul",
+        "example_en": "I will run / they will run",
+        "example_ak": "mi runul / pios runul"
+      }
+    },
+    "to_be": {
+      "rule": "All forms of 'to be' use root 'be' with standard Arkulcis tense suffixes.",
+      "present": "beas",
+      "past": "beed",
+      "future": "beul",
+      "neg_present": "no-beas",
+      "neg_past": "no-beed",
+      "neg_future": "no-beul",
+      "english_forms_covered": [
+        "am",
+        "is",
+        "are",
+        "was",
+        "were",
+        "be",
+        "been",
+        "being",
+        "will be"
+      ]
+    }
+  },
+  "adjectives": {
+    "rule": "All adjectives end in -ro. Comparative adds T. Superlative adds S.",
+    "suffixes": {
+      "base": "-ro",
+      "comparative": "-rot (more ...)",
+      "superlative": "-rots (most ...)"
+    },
+    "examples": {
+      "fastro": "fast",
+      "fastrot": "faster / more fast",
+      "fastrots": "fastest / most fast",
+      "gudro": "good",
+      "gudrot": "better",
+      "gudrots": "best"
+    }
+  },
+  "adverbs": {
+    "rule": "All adverbs end in -ly. Comparative adds T. Superlative adds S.",
+    "suffixes": {
+      "base": "-ly",
+      "comparative": "-lyt (more ...)",
+      "superlative": "-lyts (most ...)"
+    },
+    "examples": {
+      "fastly": "quickly / fast",
+      "fastlyt": "more quickly",
+      "fastlyts": "most quickly",
+      "gudly": "well",
+      "gudlyt": "better (adverb)",
+      "gudlyts": "best (adverb)"
+    }
+  },
+  "negation": {
+    "rule": "Add no- prefix before the verb.",
+    "examples": {
+      "mi no-runas": "I don't run",
+      "pi no-goed": "she didn't go",
+      "mios no-nowul": "we will not know"
+    }
+  },
+  "questions": {
+    "rule": "Add ka at the start, then verb, then subject, then rest. Same as normal word order but prefixed with ka.",
+    "examples": {
+      "ka runas ni?": "Do you run?",
+      "ka goed pi hom?": "Did she go home?",
+      "ka komul pios?": "Will they come?"
+    }
+  },
+  "possession": {
+    "rule_pronouns": "Attach the pronoun directly as a suffix to the noun (no apostrophe, no space).",
+    "rule_nouns_names": "Use 'di' (meaning 'of') between the owned and the owner.",
+    "no_apostrophe": true,
+    "examples": {
+      "katmi": "my cat",
+      "bukni": "your book",
+      "hauspi": "his / her / its house",
+      "skulmios": "our school",
+      "buk di Arlind": "Arlind's book",
+      "mindos di personos": "the minds of the people",
+      "dor di haus": "the door of the house"
+    }
+  },
+  "conjunctions": {
+    "rule": "Keep English conjunctions as-is.",
+    "words": [
+      "and",
+      "or",
+      "but",
+      "because",
+      "if",
+      "so",
+      "although",
+      "while",
+      "when",
+      "that"
+    ]
+  },
+  "prepositions": {
+    "rule": "Keep English prepositions as-is.",
+    "words": [
+      "in",
+      "on",
+      "at",
+      "to",
+      "from",
+      "with",
+      "by",
+      "of",
+      "for",
+      "about",
+      "between",
+      "through",
+      "across",
+      "over",
+      "under",
+      "after",
+      "before"
+    ]
+  },
+  "numbers": {
+    "base": 12,
+    "rule": "Base-12 number system. Digits 0-11 have unique names. Powers of 12 use digit root + -il suffix.",
+    "digits": {
+      "0": "zan",
+      "1": "ban",
+      "2": "dan",
+      "3": "fan",
+      "4": "gan",
+      "5": "han",
+      "6": "jan",
+      "7": "kan",
+      "8": "lan",
+      "9": "man",
+      "10": "nan",
+      "11": "pan"
+    },
+    "multipliers": {
+      "-bil": "x12 (12^1 = 12)",
+      "-dil": "x144 (12^2 = 144)",
+      "-fil": "x1728 (12^3 = 1728)",
+      "-gil": "x20736 (12^4 = 20736)",
+      "-hil": "x248832 (12^5 = 248832)",
+      "-jil": "x2985984 (12^6 = 2985984)"
+    },
+    "examples": {
+      "12": "banbil",
+      "13": "banbil-ban",
+      "24": "danbil",
+      "143": "panbil-pan",
+      "144": "bandil",
+      "157": "bandil-banbil-ban",
+      "1728": "banfil"
+    },
+    "digit_symbols": {
+      "description": "Written Arkulcis uses single symbols for all 12 base digits.",
+      "symbols": {
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "\u03b4 (spoken: nan)",
+        "11": "\u03bb (spoken: pan)"
+      },
+      "examples": {
+        "10 (decimal)": "\u03b4",
+        "11 (decimal)": "\u03bb",
+        "12 (decimal)": "10",
+        "22 (decimal)": "1\u03b4",
+        "144 (decimal)": "100",
+        "155 (decimal)": "10\u03bb"
+      }
+    }
+  },
+  "casing": {
+    "rule": "Arkulcis has relaxed but consistent casing conventions.",
+    "sentences": {
+      "official": "First letter of a sentence is uppercase.",
+      "allowed": "Lowercase first letter is also acceptable \u2014 not wrong.",
+      "example_official": "Runas mi fastly.",
+      "example_allowed": "runas mi fastly."
+    },
+    "proper_nouns": {
+      "official": "Names of people and places are written with an uppercase first letter.",
+      "allowed": "Lowercase is also acceptable \u2014 not wrong.",
+      "example_official": "Arlind, Danja, Erti, Hagenberg, Finiks",
+      "example_allowed": "arlind, danja, erti, hagenberg, finiks"
+    },
+    "everything_else": "All other words are always lowercase."
+  },
+  "tense_simplification": {
+    "rule": "Arkulcis has only 3 tenses: present (-as), past (-ed), future (-ul). All complex English tenses simplify to the closest simple tense. Drop all auxiliary verbs (have/has/had/been/being/will be).",
+    "present_perfect": {
+      "en": "have/has + past participle",
+      "ak": "present (-as) \u2014 drop have/has",
+      "examples": {
+        "has seen": "sias",
+        "have found": "findas",
+        "has been working": "wurkas"
+      }
+    },
+    "past_perfect": {
+      "en": "had + past participle",
+      "ak": "past (-ed) \u2014 drop had",
+      "examples": {
+        "had seen": "sied",
+        "had found": "finded",
+        "had already seen": "alredi sied"
+      }
+    },
+    "past_perfect_continuous": {
+      "en": "had been + -ing",
+      "ak": "past (-ed) \u2014 drop had been",
+      "examples": {
+        "had been looking": "loking",
+        "had been working": "wurked"
+      }
+    },
+    "present_continuous": {
+      "en": "am/is/are + -ing",
+      "ak": "present (-as) \u2014 drop am/is/are, convert -ing to -as",
+      "examples": {
+        "is running": "runas",
+        "are working": "wurkas",
+        "am reading": "redas"
+      }
+    },
+    "past_continuous": {
+      "en": "was/were + -ing",
+      "ak": "past (-ed) \u2014 drop was/were, convert -ing to -ed",
+      "examples": {
+        "was running": "runed",
+        "were working": "wurked"
+      }
+    },
+    "future_continuous": {
+      "en": "will be + -ing",
+      "ak": "future (-ul) \u2014 drop will be, convert -ing to -ul",
+      "examples": {
+        "will be running": "runul",
+        "will be working": "wurkul"
+      }
+    },
+    "present_perfect_continuous": {
+      "en": "has/have been + -ing",
+      "ak": "present (-as) \u2014 drop has/have been",
+      "examples": {
+        "has been running": "runas",
+        "have been working": "wurkas"
+      }
+    },
+    "banned_output_words": [
+      "haded",
+      "beed",
+      "bein",
+      "wased",
+      "wered",
+      "had",
+      "has",
+      "have",
+      "been",
+      "being",
+      "being"
+    ],
+    "be_continuous": {
+      "en": "am/is/are being + adjective (to be IS the main verb)",
+      "ak": "beas \u2014 do NOT drop, to be is the main verb here",
+      "examples": {
+        "am being silly": "beas mi siliro",
+        "is being rude": "beas pi rudro",
+        "are being loud": "beas pios laudro"
+      }
+    }
+  },
+  "preprocessor_skills": {
+    "description": "Rule-based skills applied before AI translation.",
+    "skills": [
+      {
+        "name": "Number Skill",
+        "file": "translator/skills/number_skill.py",
+        "description": "Converts digit and written English numbers to Arkulcis spoken form.",
+        "examples": {
+          "99": "lanbil-fan",
+          "twenty-two": "banbil-nan",
+          "one hundred and forty-four": "bandil",
+          "a dozen": "banbil"
+        }
+      },
+      {
+        "name": "Verb Skill",
+        "file": "translator/skills/verb_skill.py",
+        "description": "Strips auxiliaries, normalises irregular verbs, injects tense markers.",
+        "examples": {
+          "had been looking": "looking [PAST]",
+          "fought": "fight",
+          "didn't know": "[NEG_PAST] know",
+          "will wake": "wake [FUTURE]"
+        }
+      }
+    ]
+  }
+}
