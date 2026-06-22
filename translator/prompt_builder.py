@@ -37,21 +37,26 @@ def build_en_to_ak_prompt() -> str:
     return f"""Translate English → Arkulcis. Follow ALL rules exactly. Never skip a rule.
 
 ══════════════════════════════════════
-STEP 0 — TENSE (detect before translating each sentence)
+STEP 0 — TAGS (the input is pre-tagged — read every tag carefully)
 ══════════════════════════════════════
-The input text may contain tense markers added by pre-processing:
-  [PAST]        → the verb before this marker gets -ed
-  [PRESENT]     → the verb before this marker gets -as
-  [FUTURE]      → the verb before this marker gets -ul
-  [NEG_PAST]    → no- prefix + -ed on the next verb
-  [NEG_PRESENT] → no- prefix + -as on the next verb
-  [NEG_FUTURE]  → no- prefix + -ul on the next verb
-  Drop the marker after using it — never include [PAST] etc. in output.
+The input has ALREADY been annotated by pre-processing. Every verb you need
+to translate is wrapped in a tag with the root word INSIDE it:
+  [VERB(PAST):go]           → goed       (root + -ed)
+  [VERB(PRESENT):run]       → runas      (root + -as)
+  [VERB(FUTURE):write]      → raitul     (root + -ul, phonics first)
+  [VERB(NEG&PAST):know]     → no-noed    (no- + root + -ed)
+  [VERB(NEG&PRESENT):run]   → no-runas   (no- + root + -as)
+  [VERB(NEG&FUTURE):forget] → no-forgetul (no- + root + -ul)
+  [CTX:PAST]   → context hint only, no verb root, produces NO output token
+  [Q]          → this sentence is a question, see rule 9 below
+
+Strip the tag completely and replace it with: phonics(root) + correct suffix.
+Words with NO tag are NOT verbs needing a suffix — copy them with phonics only.
 
 Also detect from context:
-  PAST:    yesterday/last/ago + irregular past already normalised to base form
-  FUTURE:  tomorrow + [FUTURE] marker
-  PRESENT: default
+  PAST:    yesterday/last/ago + [CTX:PAST] hint
+  FUTURE:  tomorrow + [VERB(FUTURE):...] tags
+  PRESENT: default when no tag is present
 
 ══════════════════════════════════════
 STEP 1 — IRREGULAR VERBS
@@ -97,7 +102,11 @@ GRAMMAR RULES
 6. ADJECTIVES: -ro | "important"→importantro | "wonderful"→wondrifro
 7. ADVERBS: -ly | "hard"→hardly (when adverb)
 8. NEGATION: no- before verb | "didn't know"→no-noed | "never gave"→never gived
-9. QUESTIONS: ka + verb + subject + rest
+9. QUESTIONS: input may start with a [Q] tag. This means: output a yes/no
+   question. Drop the [Q] tag, start the output with "ka", then verb-first
+   as usual (ka + verb+suffix + subject + rest).
+   "[Q] she [VERB(PAST):go] home" → "ka goed pi hom"
+   "[Q] he [VERB(PRESENT):like] coffee" → "ka laikas pi kofi"
 10. POSSESSION: noun+pronoun OR di for names/nouns
     "her brother" → brodor di pi | "his bag" → bagpi | "their story" → stori di pios
     "of" possession → di | "in the articles" → in artiklos (no "di" for dropped articles)
@@ -184,6 +193,11 @@ TENSE SUFFIXES → tense markers:
   no-verb-ed → not verb [PAST]    no-noed → not know [PAST]
   no-verb-ul → not verb [FUTURE]
 
+QUESTIONS: "ka" at the start means this is a YES/NO QUESTION.
+  Strip "ka", decode the rest normally, mark with [QUESTION] at the very end.
+  "ka goed pi hom" → "she go [PAST] home [QUESTION]"
+  "ka laikas pi kofi" → "he like [PRESENT] coffee [QUESTION]"
+
 PRONOUNS:
   mi=I   ni=you   pi=he/she/it   mios=we   nios=you(pl)   pios=they
 
@@ -248,6 +262,12 @@ RESTORE WHAT ARKULCIS DROPS:
   - Restore contractions if appropriate (did not → didn't)
   - Restore correct pronouns (pi = he/she/it depending on context)
   - Make plural -os forms natural English plurals (reportos → reports)
+
+QUESTIONS: if the text ends with [QUESTION], rewrite as a proper English
+yes/no question (Did/Does/Will + subject + verb) and end with "?".
+Remove the [QUESTION] marker itself from the output.
+  "she go [PAST] home [QUESTION]" → "Did she go home?"
+  "he like [PRESENT] coffee [QUESTION]" → "Does he like coffee?"
 
 OUTPUT: Fluent natural English only. No markers, no brackets, no commentary.
 """

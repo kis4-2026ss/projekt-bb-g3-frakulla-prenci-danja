@@ -453,17 +453,115 @@ def _normalise_inside_tags(text: str) -> str:
     return text
 
 
+KNOWN_VERB_OVERRIDE = set()
+
+
+def detect_question(text: str) -> str:
+    """
+    Detect English questions formed with Did/Does/Do/Will/Would/Is/Are/Was/Were
+    + subject, and mark them with a leading [Q] tag. Strip the auxiliary
+    "Did/Does/Do" (it carries no separate meaning in Arkulcis -- tense is
+    on the main verb), and normalise the main verb back to infinitive so
+    the existing VERB tag patterns can apply tense correctly.
+    """
+    stripped = text.strip()
+    if not stripped.endswith('?'):
+        return text
+
+    # "Did/Does/Do" + subject + verb  → strip auxiliary, tag verb as PAST/PRESENT
+    m = re.match(r'^(Did|Does|Do)\s+(.+)\?\s*$', stripped, re.IGNORECASE)
+    if m:
+        aux, rest = m.group(1).lower(), m.group(2)
+        tense = 'PAST' if aux == 'did' else 'PRESENT'
+        # rest = "she go home" or "the strongest students read all the forgotten books"
+        # Find first verb-like word after the subject and tag it.
+        # Heuristic: tag the LAST bare verb token before any trailing object,
+        # but simplest robust approach: tag the first word that is not part of
+        # a noun phrase -- we approximate by tagging the first untagged word
+        # that is NOT in _AUX_SKIP and NOT preceded by "the/a/an".
+        words = rest.split(' ')
+        SKIP_SUFFIXES = ('est', 'er')
+        for i, w in enumerate(words):
+            clean = re.sub(r'[^a-zA-Z]', '', w)
+            if not clean:
+                continue
+            low = clean.lower()
+            if low in _AUX_SKIP or low in ('the', 'a', 'an', 'all', 'some', 'any', 'every'):
+                continue
+            # Skip superlatives/comparatives (strongest, faster) -- they are adjectives
+            if low.endswith(SKIP_SUFFIXES) and low not in KNOWN_VERB_OVERRIDE:
+                continue
+            # Skip plural nouns (students, books) heuristically: word ends in -s,
+            # is not in IRREGULAR_VERBS, and the NEXT word also looks like a verb
+            # (a simple plural-noun-before-verb heuristic)
+            if low.endswith('s') and low not in IRREGULAR_VERBS and i + 1 < len(words):
+                continue
+            base = _to_infinitive(low) if low.endswith(('ed', 'ing')) else low
+            words[i] = f'[VERB({tense}):{base}]'
+            break
+        return f'[Q] {" ".join(words)}'
+
+    return text
+
+
+# Common verb roots used to detect the main verb in a bare-present sentence
+# (no auxiliary, e.g. "They love reading books." / "She runs every day.")
+_COMMON_VERB_ROOTS = {
+    'love','like','want','need','know','think','believe','see','hear','feel',
+    'run','walk','read','write','speak','work','play','live','eat','drink',
+    'sleep','study','teach','learn','build','make','create','find','lose',
+    'win','help','support','support','enjoy','prefer','hate','hope','wish',
+    'own','have','hold','carry','bring','take','give','send','receive',
+    'open','close','start','begin','finish','end','continue','stop',
+    'buy','sell','pay','cost','spend','save','earn','use','try','attempt',
+    'speak','talk','say','tell','ask','answer','explain','describe','show',
+}
+
+
+def _tag_bare_present_verb(text: str) -> str:
+    """
+    If a sentence has NO [VERB(...)] tag, no [Q] tag, and no [CTX] tag yet,
+    it's likely a bare present-tense sentence with no auxiliary to strip
+    (e.g. "They love reading books."). Tag the first recognised verb root
+    as PRESENT so the AI has something deterministic to apply -as to.
+    """
+    if '[VERB(' in text or '[Q]' in text:
+        return text  # already handled
+
+    words = text.split(' ')
+    for i, w in enumerate(words):
+        clean = re.sub(r'[^a-zA-Z]', '', w)
+        if not clean:
+            continue
+        low = clean.lower()
+        # Strip 3rd-person -s ending (runs→run, works→work) before checking
+        candidate = low
+        if low.endswith('s') and low[:-1] in _COMMON_VERB_ROOTS:
+            candidate = low[:-1]
+        elif low.endswith('es') and low[:-2] in _COMMON_VERB_ROOTS:
+            candidate = low[:-2]
+        if candidate in _COMMON_VERB_ROOTS or low in IRREGULAR_VERBS.values():
+            punct = re.sub(r'[a-zA-Z]', '', w)
+            words[i] = f'[VERB(PRESENT):{candidate}]{punct}'
+            return ' '.join(words)
+    return text
+
+
 def apply(text: str) -> str:
     """
     Full verb skill pipeline:
+      0. Detect Did/Does/Do questions, mark with [Q] and tag the main verb
       1. Inject tense markers (strips auxiliaries — must run on original English)
       2. Normalise irregular verbs inside tags + in free text
       3. Detect past context from signal words
+      4. Fallback: tag bare present-tense verbs with no auxiliary
     """
+    text = detect_question(text)
     text = inject_tense_markers(text)
     text = _normalise_inside_tags(text)   # fix irregular forms captured inside tags
     text = normalise_irregular_verbs(text) # fix remaining irregular forms in free text
     text = _detect_past_from_context(text)
+    text = _tag_bare_present_verb(text)
     return text
 
 

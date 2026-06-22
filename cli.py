@@ -15,7 +15,7 @@ _DEBUG_ACTIVE = os.getenv('DEBUG', 'false').lower() in ('true', '1', 'yes')
 BANNER = """
 ╔══════════════════════════════════════════╗
 ║        Arkulcis Translator CLI           ║
-║  The constructed language — EN ↔ AK     ║
+║  The constructed language — EN ↔ AK      ║
 ╚══════════════════════════════════════════╝
 """
 

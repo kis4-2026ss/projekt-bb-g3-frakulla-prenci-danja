@@ -573,3 +573,96 @@ class TestAnnotationSkillFull:
         assert '[PRON:pi]' in result
         assert '[NAME:Hagenberg]' in result
         assert '[ADJ(SUP):beautiful]' in result or '[ADJ:beautiful]' in result
+
+
+# ─────────────────────────────────────────────────────────────
+# Regression tests — bugs found via live API test runs
+# ─────────────────────────────────────────────────────────────
+
+class TestQuestionDetection:
+    """Did/Does/Do questions must be marked [Q] with main verb tagged."""
+
+    def test_did_she_go_home(self):
+        from translator.skills.verb_skill import apply
+        result = apply('Did she go home?')
+        assert '[Q]' in result
+        assert '[VERB(PAST):go]' in result
+        assert 'Did' not in result
+
+    def test_does_he_like_coffee(self):
+        from translator.skills.verb_skill import apply
+        result = apply('Does he like coffee?')
+        assert '[Q]' in result
+        assert '[VERB(PRESENT):like]' in result
+
+    def test_do_they_want_pizza(self):
+        from translator.skills.verb_skill import apply
+        result = apply('Do they want pizza?')
+        assert '[Q]' in result
+        assert '[VERB(PRESENT):want]' in result
+
+    def test_question_skips_superlative_adjective(self):
+        """'Did the strongest students read...' must tag 'read', not 'strongest'."""
+        from translator.skills.verb_skill import apply
+        result = apply('Did the strongest students read all the forgotten books?')
+        assert '[VERB(PAST):read]' in result
+        assert '[VERB(PAST):strong' not in result
+
+    def test_non_question_unaffected(self):
+        from translator.skills.verb_skill import apply
+        result = apply('She went home.')
+        assert '[Q]' not in result
+
+
+class TestBarePresentVerbFallback:
+    """Sentences with no auxiliary (bare present tense) must still get a VERB tag."""
+
+    def test_they_love_reading(self):
+        from translator.skills.verb_skill import apply
+        result = apply('They love reading books.')
+        assert '[VERB(PRESENT):love]' in result
+
+    def test_she_runs_every_day(self):
+        from translator.skills.verb_skill import apply
+        result = apply('She runs every day.')
+        assert '[VERB(PRESENT):run]' in result
+
+    def test_he_works_hard(self):
+        from translator.skills.verb_skill import apply
+        result = apply('He works hard.')
+        assert '[VERB(PRESENT):work]' in result
+
+    def test_does_not_override_existing_tag(self):
+        """If a sentence already has an auxiliary-derived tag, don't double-tag."""
+        from translator.skills.verb_skill import apply
+        result = apply('We will not forget the beautiful city.')
+        assert result.count('[VERB(') == 1
+        assert '[VERB(NEG&FUTURE):forget]' in result
+
+    def test_does_not_fire_on_questions(self):
+        from translator.skills.verb_skill import apply
+        result = apply('Did she go home?')
+        # Only one VERB tag (from the question handler), not a second from fallback
+        assert result.count('[VERB(') == 1
+
+
+class TestPromptQuestionRules:
+    """The AK->EN prompts must document how to handle 'ka' questions."""
+
+    def test_decoder_prompt_has_ka_rule(self):
+        from translator.prompt_builder import build_ak_to_en_prompt
+        prompt = build_ak_to_en_prompt()
+        assert 'ka' in prompt.lower()
+        assert 'QUESTION' in prompt
+
+    def test_englishify_prompt_has_question_rule(self):
+        from translator.prompt_builder import build_ak_to_en_englishify_prompt
+        prompt = build_ak_to_en_englishify_prompt()
+        assert 'QUESTION' in prompt
+        assert '?' in prompt
+
+    def test_en_to_ak_prompt_has_q_tag_rule(self):
+        from translator.prompt_builder import build_en_to_ak_prompt
+        prompt = build_en_to_ak_prompt()
+        assert '[Q]' in prompt
+        assert 'ka' in prompt.lower()
